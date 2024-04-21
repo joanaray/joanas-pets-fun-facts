@@ -1,0 +1,86 @@
+:root {
+  --color-main: hsl(180, 100%, 25%); /* #008080 */
+  --color-main--lighter: hsl(180, 20%, 75%); /* #b3cccc */
+  --color-alt: hsl(128, 50%, 97%); /* #f3fbf4 */
+  height: 100%;
+  background-color: var(--color-alt);
+  color: var(--color-main);
+  font-family: sans-serif;
+}
+*,
+*::before,
+*::after {
+  position: relative;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  padding: 2rem 4rem;
+}
+#root {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+main {
+  flex-grow: 1;
+}
+
+/** -- TYPOGRAPHY -- **/
+:where(h1, h2, h3, h4, h5, h6, p):only-child {
+  margin: 0;
+}
+:where(h1, h2, h3, h4, h5, h6, p):first-child {
+  margin-top: 0;
+}
+
+/** -- ELEMENTS -- **/
+img{
+  max-width: 100%;
+}
+
+button {
+  width: 100%;
+  background-color: var(--color-alt);
+  color: var(--color-main);
+  border: 1px solid var(--color-main);
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+button.active {
+  background-color: var(--color-main);
+  color: var(--color-alt);
+}
+button:hover {
+  background-color: var(--color-main--lighter);
+  color:var(--color-main);
+  border-color: var(--color-main--lighter);
+}
+
+/** -- COMPONENTS -- **/
+.pet-card figure {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-main--lighter);
+}
+.pet-card figure img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

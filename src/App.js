@@ -37,8 +37,8 @@ const Miya = Object.create(Pet);
 Miya.petName = "Miya";
 Miya.petBirthdate = "June 2011";
 Miya.petBreed = "Mutt";
-Miya.petLikes = ["naps", "food", "cuddles", "exploring the garden", "hunting"];
-Miya.petBio = "Miya is Leia's sister";
+Miya.petLikes = ["naps", "food", "cat treats", "cuddles", "exploring the garden", "hunting"];
+Miya.petBio = "Miya is Leia's sister.";
 Miya.petColor = "Black and white";
 Miya.petPic = ["miya-01.jpg", "miya-02.jpeg"];
 Miya.petType = "cat";
@@ -48,8 +48,9 @@ const Nico = Object.create(Pet);
 Nico.petName = "Nico";
 Nico.petBirthdate = "August 2015";
 Nico.petBreed = "Mutt";
-Nico.petLikes = ["naps", "food", "exploring the garden"];
-Nico.petBio = "Nico is a spooky cat";
+Nico.petLikes = ["naps", "food", "exploring the garden", "rubbing himself all over the place"];
+Nico.petDislikes = ["sudden movements", "being pestered by Tito"];
+Nico.petBio = "Nico is a nervous cat! Sometimes he gets in fights with Tito because Tito's too excited and makes him a bit anxious. But he's usually very nice and chill.";
 Nico.petColor = "Black and white";
 Nico.petPic = ["nico-01.jpg", "nico-02.jpg"];
 Nico.petType = "cat";
@@ -59,9 +60,9 @@ const Tito = Object.create(Pet);
 Tito.petName = "Tito";
 Tito.petBirthdate = "March 2020";
 Tito.petBreed = "Mutt";
-Tito.petLikes = ["naps", "food", "exploring the garden", "playing with toys", "hunting"];
+Tito.petLikes = ["naps", "food", "exploring the garden", "playing with toys", "hunting", "hanging around with Nico"];
 Tito.petDislikes = ["Belly rubs"];
-Tito.petBio = "Tito is a very playful cat, the youngest of the gang";
+Tito.petBio = "Tito is a very playful cat, the youngest of the current cat gang and Tita's brother.";
 Tito.petColor = "Black with two white spots";
 Tito.petPic = ["tito-01.jpg", "tito-02.jpg"];
 Tito.petType = "cat";
@@ -71,9 +72,10 @@ const Tita = Object.create(Pet);
 Tita.petName = "Tita";
 Tita.petBirthdate = "March 2020";
 Tita.petBreed = "Mutt";
-Tita.petLikes = ["naps", "food", "exploring the garden", "playing with toys", "hunting"];
+Tita.petLikes = ["naps", "food", "exploring the garden", "playing with Tito", "hunting"];
+Tita.petDislikes = ["sudden movements"];
 Tita.petBio = "Tita was Tito's sister. She was a bit blind but still a good hunter! She got sick in 2022 and didn't make it. She was a really cute pet.";
-Tita.petColor = "White, beige and black striped tail and face.";
+Tita.petColor = "White, beige and black striped tail and face";
 Tita.petPic = ["tita-01.jpg", "tita-02.jpg"];
 Tita.petType = "cat";
 Tita.addToPets();
@@ -85,20 +87,21 @@ Miriams.petLikes = [
   "eating worms",
   "eating weeds and grass",
 ];
-Miriams.petBio = "Miriams are two chicken Joana can't tell appart.";
+Miriams.petDislikes=["being picked up"];
+Miriams.petBio = "The Miriams are two chicken Joana can't tell appart.";
 Miriams.petColor = "Grey";
 Miriams.petType = "chicken";
 Miriams.petQuantity = 2;
 Miriams.addToPets();
 
 const Julia = Object.create(Pet);
-Julia.petName = "Julia";
+Julia.petName = "Júlia";
 Julia.petLikes = [
   "exploring the garden",
   "eating worms",
   "eating weeds and grass",
 ];
-Julia.petBio = "Julia is a black chicken. My friend Inês gave her that name.";
+Julia.petBio = "Júlia is a black chicken. My friend Inês gave her that name. She will let you pet her but you must approach very carefully to do it.";
 Julia.petColor = "Black and golden";
 Julia.petPic = ['julia-01.jpg'];
 Julia.petType = "chicken";
@@ -111,7 +114,7 @@ export default function App() {
   const [chosenPet, setChosenPet] = useState(currentPet);
 
   const listPets = pets.map((pet, i) => {
-    if (chosenPet === pet) {
+    if (pet === chosenPet) {
       isActive = "active";
     } else {
       isActive = "";
@@ -121,7 +124,7 @@ export default function App() {
         <button
           type="button"
           className={isActive}
-          onClick={() => onPetClick(pet)}
+          onClick={() => handlePetClick(pet)}
         >
           {pet.petName}
         </button>
@@ -129,7 +132,7 @@ export default function App() {
     );
   });
 
-  function onPetClick(clickedPet) {
+  function handlePetClick(clickedPet) {
     for (let i = 0; i < pets.length; i++) {
       if (pets[i].active === true) {
         pets[i].active = false;
@@ -143,7 +146,7 @@ export default function App() {
   return (
     <div className="content">
       <div className="pet-list">
-        <h3>Choose pet:</h3>
+        <p><strong>Choose pet:</strong></p>
         <ul>{listPets}</ul>
       </div>
       <div className="pet-card">

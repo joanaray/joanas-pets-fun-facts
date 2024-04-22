@@ -1,23 +1,41 @@
-export default function PetCard(){
-    return(
-        <article>
-          <h2>Pet name here</h2>
-          <img src="" alt="Pet name" />
-          <h3>About</h3>
-          <ul>
-            <li>birth date</li>
-            <li>color</li>
-            <li>breed</li>
-          </ul>
-          <p>Little bio</p>
+function PetCard({ pet }) {
+  const petLikesList = pet.petLikes.map((petLikesItem) => {
+    return <li>{petLikesItem}</li>;
+  });
+  const petDislikesList = pet.petDislikes.map((petListItem) => {
+    return <li>{petListItem}</li>;
+  });
+  const petPicList = pet.petPic;
+  const randomPetPic = petPicList[Math.floor(Math.random() * petPicList.length)];
+  return (
+    <article>
+      <h2>{pet.petName}</h2>
+      <figure>
+        {pet.petPic.length>0 && <img src={`assets/img/${randomPetPic}`} alt={pet.petName} />}
+      </figure>
+      <h3>
+        About {pet.petQuantity > 1 ? "these" : "this"} {pet.petType}
+      </h3>
+      <ul>
+        {pet.petBirthdate && <li>birth date: {pet.petBirthdate}</li>}
+        {pet.petColor && <li>color: {pet.petColor}</li>}
+        {pet.petBreed && <li>breed: {pet.petBreed}</li>}
+      </ul>
+      <p>{pet.petBio}</p>
+      {!(pet.petLikes.length === 0) && (
+        <>
           <h3>Likes:</h3>
-          <ul>
-            <li>stuff they like</li>
-          </ul>
+          <ul>{petLikesList}</ul>
+        </>
+      )}
+      {!(pet.petDislikes.length === 0) && (
+        <>
           <h3>Dislikes:</h3>
-          <ul>
-            <li>stuff they don't like</li>
-          </ul>
-        </article>
-    )
+          <ul>{petDislikesList}</ul>
+        </>
+      )}
+    </article>
+  );
 }
+
+export default PetCard;

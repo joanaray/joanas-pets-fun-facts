@@ -42,6 +42,12 @@ main {
 }
 
 /** -- ELEMENTS -- **/
+a {
+  color:var(--color-main);
+}
+a:hover {
+  text-decoration: none;
+}
 img{
   max-width: 100%;
 }
@@ -65,6 +71,13 @@ button:hover {
 }
 
 /** -- COMPONENTS -- **/
+.pet-list ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
 .pet-card figure {
   margin: 0;
   width: 100%;

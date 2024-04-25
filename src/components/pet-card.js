@@ -1,15 +1,22 @@
 function PetCard({ pet }) {
-  const petLikesList = pet.petLikes.map((petLikesItem) => {
-    return <li>{petLikesItem}</li>;
+  // Display the pets likes and dislikes as lists.
+  const petLikesList = pet.petLikes.map((petLikesItem, i) => {
+    return <li key={i}>{petLikesItem}</li>;
   });
-  const petDislikesList = pet.petDislikes.map((petListItem) => {
-    return <li>{petListItem}</li>;
+  const petDislikesList = pet.petDislikes.map((petListItem, i) => {
+    return <li key={i}>{petListItem}</li>;
   });
+
+  // Choose a random pet pic on card load.
   const petPicList = pet.petPic;
   const randomPetPic =
     petPicList[Math.floor(Math.random() * petPicList.length)];
+  
   return (
-    <article>
+    /** 
+     * Set up verifications for most of the fields so they load but only if the pet object key has any values.
+     */ 
+    <article id={`card-${pet.id}`}>
       <h2>{pet.petName}</h2>
       <figure>
         {pet.petPic.length > 0 && (

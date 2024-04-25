@@ -1,11 +1,8 @@
 :root {
-  /*--color-main: hsl(180, 100%, 25%);  #008080 */
-  /*--color-main--lighter: hsl(180, 20%, 75%);  #b3cccc */
-  /*--color-alt: hsl(128, 50%, 97%);  #f3fbf4 */
-
-  --color-main: hsl(128, 50%, 97%);
-  --color-main--darker: hsl(128, 20%, 87%);
-  --color-alt: hsl(180, 100%, 25%);
+  --color-main: hsl(21, 68%, 77%); /* #ecb79b */
+  --color-main--lighter: hsl(21, 63%, 80%);
+  --color-main--darker: hsl(21, 28%, 52%);
+  --color-alt: hsl(112, 38%, 8%); /* #0e1b0c */
 
   --font-main: "Quicksand", sans-serif;
   height: 100%;
@@ -56,7 +53,9 @@ main > .content {
 footer {
   background-color: var(--color-main);
   color: var(--color-alt);
+  text-align: right;
 }
+
 /** -- TYPOGRAPHY -- **/
 :where(h1, h2, h3, h4, h5, h6, p):only-child {
   margin: 0;
@@ -93,6 +92,20 @@ small,
 .x-small {
   font-size: 0.694em;
 }
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
 /** -- ELEMENTS -- **/
 a {
   color: var(--color-main);
@@ -124,7 +137,7 @@ button.active {
 }
 button:hover {
   background-color: var(--color-main--darker);
-  color: var(--color-alt);
+  color: var(--color-main--lighter);
   border-color: var(--color-main--darker);
 }
 
@@ -165,7 +178,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-main--darker);
+  background-color: var(--color-main--lighter);
 }
 .pet-card figure img {
   width: 100%;
@@ -189,6 +202,25 @@ button:hover {
 .pet-card .pet-prefs ul {
   margin: 0;
   padding-left: 1rem;
+}
+
+/* - PET NAV - */
+nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+nav button {
+  width: auto;
+  border-radius: 100%;
+  border: 1px solid var(--color-alt);
+  aspect-ratio: 1;
+  background-color: var(--color-main);
+  color: var(--color-alt);
+}
+nav button:hover {
+  border-color: var(--color-alt);
+  background-color: var(--color-alt);
 }
 
 /** -- MEDIA QUERIES -- **/
@@ -226,6 +258,17 @@ button:hover {
     width: calc(50% - 1rem);
     flex-grow: 1;
   }
+  nav {
+    position: absolute;
+    top: calc(-2rem - 1px);
+    right: -1px;
+  }
+  nav button {
+    border-radius: 0;
+    aspect-ratio: initial;
+    display: flex;
+    align-items: center;
+  }
 }
 @media screen and (min-width: 1240px) {
   header,
@@ -245,5 +288,9 @@ button:hover {
   }
   .pet-prefs {
     width: 13%;
+  }
+  nav {
+    top: 0;
+    right: 4rem;
   }
 }

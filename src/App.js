@@ -70,7 +70,7 @@ Nico.petLikes = [
 Nico.petDislikes = ["sudden movements", "being pestered by Tito"];
 Nico.petBio =
   "Nico is a nervous outdoor cat! He came around when he was about 1 year old. Sometimes he gets in fights with Tito because Tito's too excited and makes him a bit anxious. But he's usually very nice and chill. Now that I think about it, he might be Tito's dad. [insert Luke Skywalker scene]";
-Nico.petColor = "Black and white";
+Nico.petColor = "Really dark brown and white";
 Nico.petPic = ["nico-01.jpg", "nico-02.jpg"];
 Nico.petType = "cat";
 Nico.addToPets();
@@ -124,6 +124,7 @@ Miriams.petLikes = [
 Miriams.petDislikes = ["being picked up", "being petted"];
 Miriams.petBio = "The Miriams are two chicken Joana can't tell appart.";
 Miriams.petColor = "Grey";
+Miriams.petPic = ["miriams-01.jpg", "miriams-02.jpg"];
 Miriams.petType = "chicken";
 Miriams.petQuantity = 2;
 Miriams.addToPets();
@@ -137,11 +138,26 @@ Julia.petLikes = [
 ];
 Julia.petdislikes = ["being picked up"];
 Julia.petBio =
-  "Júlia is a black chicken who was named by my friend Inês. She will let you pet her but you must approach very carefully to do it.";
+  "Júlia is a black chicken who was named by my friend Inês. She lays eggs and will let you pet her but you must approach very carefully to do it.";
 Julia.petColor = "Black and golden";
-Julia.petPic = ["julia-01.jpg"];
+Julia.petPic = ["julia-01.jpg", "julia-02.jpg"];
 Julia.petType = "chicken";
 Julia.addToPets();
+
+const Lisa = Object.create(Pet);
+Lisa.petName = "Lisa";
+Lisa.petLikes = [
+  "exploring the garden",
+  "eating worms",
+  "eating weeds and grass",
+];
+Lisa.petdislikes = ["being picked up"];
+Lisa.petBio =
+  "Lisa is a black chicken who was also named by my friend Inês. She was brought here at the same time as Júlia. She will let you pet her but you must approach very carefully to do it.";
+Lisa.petColor = "Black and golden";
+Lisa.petPic = ["lisa-01.jpg", "lisa-02.jpg"];
+Lisa.petType = "chicken";
+Lisa.addToPets();
 
 export default function App() {
   // Sort pets alphabetically and update their ID according to the new position in the list.

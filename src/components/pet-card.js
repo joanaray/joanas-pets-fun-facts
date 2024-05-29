@@ -34,6 +34,11 @@ function PetCard({ pet }) {
               <strong>birth date:</strong> {pet.petBirthdate};
             </li>
           )}
+          {pet.petRip && (
+            <li>
+            <strong>RIP:</strong> {pet.petRip};
+          </li>
+          )}
           {pet.petColor && (
             <li>
               <strong>color:</strong> {pet.petColor};

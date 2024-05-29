@@ -23,6 +23,7 @@ const Pet = {
   addToPets() {
     pets.push(this); // add them to a Pet list
   },
+  petRip: "",
 };
 
 const Leia = Object.create(Pet);
@@ -108,10 +109,11 @@ Tita.petLikes = [
 ];
 Tita.petDislikes = ["sudden movements"];
 Tita.petBio =
-  "Tita was Tito's sister and was also born around here to a stray mom who has since disappeared. She was a bit blind but still a good hunter! She got sick in 2022 and didn't make it. She was a really sweet pet.";
+  "Tita was Tito's sister and was also born around here to a stray mom who has since disappeared. She was a bit blind but still a good hunter!";
 Tita.petColor = "White, beige and black striped tail and face";
 Tita.petPic = ["tita-01.jpg", "tita-02.jpg"];
 Tita.petType = "cat";
+Tita.petRip = "She got sick in 2022 and didn't make it. She was a really sweet pet."
 Tita.addToPets();
 
 const Miriams = Object.create(Pet);
@@ -157,6 +159,7 @@ Lisa.petBio =
 Lisa.petColor = "Black and golden";
 Lisa.petPic = ["lisa-01.jpg", "lisa-02.jpg"];
 Lisa.petType = "chicken";
+Lisa.petRip = "Lisa was one of the victims of the May K9 massacre, when two dogs were able to enter the chicken coop and attacked 3 of the 4 chicken there. Fuckers."
 Lisa.addToPets();
 
 export default function App() {

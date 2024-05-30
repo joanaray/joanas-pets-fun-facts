@@ -35,10 +35,10 @@ function Nav({ chosenPet, sortedPets, Pet, setPetState }) {
         onClick={() => handlePetNav("previous", previousPet)}
         aria-label="Go to previous pet"
       >
-        <span class="material-symbols-outlined">arrow_back</span>
+        <span className="material-symbols-outlined">arrow_back</span>
       </button>
       <button type="button" onClick={() => handlePetNav("next", nextPet)}  aria-label="Go to next pet">
-      <span class="material-symbols-outlined">arrow_forward</span>
+      <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </nav>
   );

@@ -60,7 +60,8 @@ footer {
 :where(h1, h2, h3, h4, h5, h6, p):only-child {
   margin: 0;
 }
-:where(h1, h2, h3, h4, h5, h6, p):first-child {
+:where(h1, h2, h3, h4, h5, h6, p):first-child,
+:where(h1, h2, h3, h4, h5, h6) + p {
   margin-top: 0;
 }
 
@@ -141,6 +142,24 @@ button:hover {
   border-color: var(--color-main--darker);
 }
 
+.btn-link {
+  width: auto;
+  padding: 0;
+  border:none;
+  display: inline;
+  color: initial;
+  font-weight: initial;
+  font-size: initial;
+  text-decoration: underline;
+  text-transform: initial;
+  background:none;
+}
+.btn-link:hover {
+  color: initial;
+  text-decoration: none;
+  background:none;
+}
+
 /** -- COMPONENTS -- **/
 .pet-list {
   width: 100%;
@@ -191,6 +210,15 @@ button:hover {
 .pet-card h4 {
   border-bottom: 1px solid var(--color-alt);
 }
+
+.pet-card a {
+  color: var(--color-alt);
+  text-decoration:underline;
+  cursor: pointer;
+}
+.pet-card a:hover {
+  text-decoration:none;
+}
 .pet-card .pet-props {
   margin: 0;
   padding: 0;
@@ -221,6 +249,33 @@ nav button {
 nav button:hover {
   border-color: var(--color-alt);
   background-color: var(--color-alt);
+}
+
+/* - MODAL - */
+dialog[open] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  background: hsla(0, 0%, 0%, 0.5);
+}
+dialog div {
+  width: 50%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-main);
+  padding: 2rem;
+  border:4px solid var(--color-alt);
 }
 
 /** -- MEDIA QUERIES -- **/

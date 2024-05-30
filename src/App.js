@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import PetCard from "./components/pet-card";
 import Nav from "./components/nav";
+import Dialog from "./components/Dialog";
 
 /**
  * Creating Pet objects and adding them to a list.
@@ -113,7 +114,8 @@ Tita.petBio =
 Tita.petColor = "White, beige and black striped tail and face";
 Tita.petPic = ["tita-01.jpg", "tita-02.jpg"];
 Tita.petType = "cat";
-Tita.petRip = "She got sick in 2022 and didn't make it. She was a really sweet pet."
+Tita.petRip =
+  "She got sick in 2022 and didn't make it. She was a really sweet pet.";
 Tita.addToPets();
 
 const Miriams = Object.create(Pet);
@@ -129,6 +131,7 @@ Miriams.petColor = "Grey";
 Miriams.petPic = ["miriams-01.jpg", "miriams-02.jpg"];
 Miriams.petType = "chicken";
 Miriams.petQuantity = 2;
+Miriams.petRip = ["The Miriams were also victims of the ", <Dialog />, " and only one of them survived."]
 Miriams.addToPets();
 
 const Julia = Object.create(Pet);
@@ -159,7 +162,7 @@ Lisa.petBio =
 Lisa.petColor = "Black and golden";
 Lisa.petPic = ["lisa-01.jpg", "lisa-02.jpg"];
 Lisa.petType = "chicken";
-Lisa.petRip = "Lisa was one of the victims of the May K9 massacre, when two dogs were able to enter the chicken coop and attacked 3 of the 4 chicken there. Fuckers."
+Lisa.petRip = ["Lisa was one of the victims of the ", <Dialog />, '.'];
 Lisa.addToPets();
 
 export default function App() {

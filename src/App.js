@@ -79,7 +79,7 @@ Nico.addToPets();
 
 const Tito = Object.create(Pet);
 Tito.petName = "Tito";
-Tito.petBirthdate = "March 2020";
+Tito.petBirthdate = "March 2021";
 Tito.petBreed = "Mutt";
 Tito.petLikes = [
   "naps",
@@ -99,7 +99,7 @@ Tito.addToPets();
 
 const Tita = Object.create(Pet);
 Tita.petName = "Tita";
-Tita.petBirthdate = "March 2020";
+Tita.petBirthdate = "March 2021";
 Tita.petBreed = "Mutt";
 Tita.petLikes = [
   "naps",
